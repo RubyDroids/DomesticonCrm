@@ -22,6 +22,7 @@ gem 'cable_ready'
 gem 'stimulus_reflex'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'clearance'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -44,6 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
   gem 'rubocop', require: false
+  gem 'bootscaf' # bootscaf update Model // bootscaf update --all
 end
 
 group :test do
