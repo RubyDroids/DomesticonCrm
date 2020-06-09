@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  database: <%= ENV["DB_DATABASE"] || "dom_main" %>
+  username: <%= ENV["DB_USERNAME"] || "vyacheslavbondaruk"  %>
+  password: <%= ENV["DB_PASSWORD"] || ""  %>
+  host: <%= ENV["DB_HOST"] || "localhost" %>
+  port: 5434
+  pool: 10
+
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: dom_main_test
+  port: 5434
+
+production:
+  database: <%= ENV["DB_DATABASE"] || "domesticon_prod" %>
+  username: <%= ENV["DB_USERNAME"] || "deploy"  %>
+  password: <%= ENV["DB_PASSWORD"] || "h@#7621nBvz" %>
+  host: <%= ENV["DB_HOST"] || "localhost" %>
+  pool: 10
