@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+  get 'dashboards/main'
+  # constraints Clearance::Constraints::SignedIn.new { |user| user.admin? } do
+  #   root to: "admin/dashboards#show", as: :admin_root
+  # end
+  #
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "dashboards#main", as: :signed_in_root
+  end
+
+  # constraints Clearance::Constraints::SignedOut.new do
+  #   root to: "pages#index"
+  # end
+  #
   resources :users
-  get 'pages/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root to: "pages#index"
 end
