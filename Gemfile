@@ -45,7 +45,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
   gem 'rubocop', require: false
-  gem 'bootscaf' # bootscaf update Model // bootscaf update --all
 end
 
 group :test do
