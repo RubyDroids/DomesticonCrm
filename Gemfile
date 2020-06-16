@@ -59,3 +59,6 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 end
+
+# Mountable
+gem 'backoffice', path: 'backoffice'

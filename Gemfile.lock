@@ -1,3 +1,9 @@
+PATH
+  remote: backoffice
+  specs:
+    backoffice (0.1.0)
+      rails (~> 6.0.3, >= 6.0.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -302,6 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  backoffice!
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
