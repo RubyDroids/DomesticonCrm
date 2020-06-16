@@ -24,11 +24,11 @@ class User < ApplicationRecord
   end
   
   def admin?
-    self.account_type == :administrator
+    self.account_type == "administrator"
   end
   
   def owner?
-    self.account_type == :property_holder
+    self.account_type == "property_holder"
   end
   
   def part_of_management?
