@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   #   root to: "pages#index"
   # end
   #
+  #resources :users, only: [:index, :show, :edit, :update, :destroy]
   resources :users
 
   root to: "pages#index"

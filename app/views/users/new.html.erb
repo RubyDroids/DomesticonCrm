@@ -1,15 +1,66 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
-
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-
-    <div class="submit-field">
-      <%= form.submit %>
+<div class="container full_height">
+  <div class="row h-100">
+    <div class="col-11 col-md-12 mx-auto my-auto mb10 text-center">
+      <h4>Bienvenido a Domesticon</h4>
+      <p><small>Para operar en Domesticon necesitas una cuenta. Eliga tipo de cuenta (Administrador o Propietario) y completa los datos.</small></p>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+    <div class="col-11 col-md-1 mx-auto mt0 pt50 ">
+      <%= image_pack_tag("icons/building.png", width: "40%", class: "d-block d-sm-none text-center") %>
+      <%= image_pack_tag("icons/building.png", width: "300px", class: "d-none d-sm-block text-center") %>  
     </div>
-  <% end %>
+
+    <div class="col-11 col-md-5 mx-auto mt0 text-center">
+      <div id="clearance" class="sign-up">
+        <%= form_for @user do |form| %>
+          <%= render partial: '/users/form', object: form %>
+
+          <div class="actions submit-field d-block d-sm-none text-center">
+            <%= form.submit "Crear cuenta", class: "btn btn-dark btn-sm" %>
+          </div>
+
+          <div class="actions submit-field mt30 d-none d-sm-block text-left">
+            <%= form.submit "Crear cuenta", class: "btn btn-dark btn-sm float-left" %>
+    
+            <%= link_to "Ya tengo cuenta", sign_in_path, class: "btn btn-secondary btn-sm float-right" %>
+          </div> 
+
+          <div class="other-links mt20 d-block d-sm-none">
+            <%= link_to "Ya tengo cuenta", sign_in_path, class: "btn btn-secondary btn-sm text-center" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+<% content_for :head do %>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+
+    /* CSS only for examples not required for centering */
+    .full_height {
+      height: 100%;
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+  
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    legend {
+      font-size: 1.1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+<% end %>

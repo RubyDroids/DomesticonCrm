@@ -1,0 +1,50 @@
+es:
+  views:
+    category:
+      select: Selecciona una categoría
+    admin:
+      hello: Hola, %{name}
+      welcome: Bienvenido, %{name}
+      show_phone: Mostrar teléfono
+      send_message: Enviar mensaje
+      last_visit: Ultima visita fue hace
+      registered_from: En el sitio
+      region: Región
+      total_ads: Total publicaciones
+      complete_profile: Completa datos para comenzar a publicar.
+      with_us_from: Estas con nosotros hace %{from}
+      save: Guardar datos
+    common:
+      created:
+        success: "%{name} creado correctamente"
+        error: "Todos los campos son obligatorios."
+      updated:
+        success: "%{name} ha sido actualizado"
+        error: "%{name} no pudó ser actualizado"
+      destroyed:
+        success: "%{name} ha sido eliminado"
+        error: "%{name} no pudó ser eliminado"
+      home: Inicio
+      posts_not_found: Por el momento no poseamos publicaciones activas.
+      ago: atrás
+      close_modal: Cerrar ventana
+      create_new_add: Publicar aviso
+      view_all_ads: Ver todas las publicaciones
+    actions:
+      new: Nueva %{name}
+      edit: Actualizar %{name}
+      destroy: Eliminar %{name}
+      confirm: Confirmar %{name}
+      choose_file: 'Selecciona archivos...'
+      choose_images: 'Selecciona imagenes...'
+      publish: Publicar %{name}
+      view: Ver %{name}
+      manage: Gestinar %{name}
+    login_or_signup:
+      main_title: Crear Cuenta o Ingresar
+      companies_access: Acceso Esgrimistas
+      sign_in: Ingresar
+      sign_up: Crear cuenta Gratis
+      create_account_title: Crear cuenta
+      already_have_account: Ya tengo cuenta
+      logout: Cerrar sessión

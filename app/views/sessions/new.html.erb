@@ -1,6 +1,44 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
-
-  <%= render partial: '/sessions/form' %>
-
+<div class="container full_height">
+  <div class="row h-100">
+    <div class="col-11 col-md-1 mx-auto my-auto">
+      <%= image_pack_tag("icons/building.png", width: "40%", class: "d-block d-sm-none text-center") %>
+      <%= image_pack_tag("icons/building.png", width: "300px", class: "d-none d-sm-block text-center") %>
+    
+    </div>
+    <div class="col-11 col-md-5 mx-auto my-auto text-center">
+      <div id="clearance" class="sign-in">
+        <%= render partial: '/sessions/form' %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<% content_for :head do %>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+
+    /* CSS only for examples not required for centering */
+    .full_height {
+      height: 100%;
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+  
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    legend {
+      font-size: 1.1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+<% end %>

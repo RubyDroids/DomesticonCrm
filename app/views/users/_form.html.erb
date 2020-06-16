@@ -1,9 +1,34 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
-</div>
+<fieldset>
+	<legend class="d-block d-sm-none text-center">Datos personales:</legend>
+  <legend class="d-none d-sm-block text-left">Datos personales:</legend>
+	
+  <div class="form-group">
+  	<%= form.select :account_type, 
+				options_for_select(User.account_types.map { |key, value| [key.humanize, key] }), 
+				{ include_blank: "Selecciona tipo de cuenta" }, 
+				{ class: "custom-select custom-select-sm" } 
+		%>
+  </div>
 
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</div>
+  <div class="form-group">
+  	<%= form.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "Tu nombre", class: "form-control form-control-sm" %>
+  </div>
+
+  <div class="form-group">
+  	<%= form.text_field :last_name, autocomplete: "last_name", placeholder: "Ingresa tu apellido", class: "form-control form-control-sm" %>
+  </div>
+		
+  <div class="form-group">
+  	<%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Tu email. Ej.: email@email.com", class: "form-control form-control-sm" %>
+  </div>
+  
+  <div class="form-group">
+  	<%= form.text_field :phone_number, autocomplete: "phone", placeholder: "Telefono, solo números: 11 1234 5678", class: "form-control form-control-sm" %>
+  </div>  
+
+  <div class="form-group">      
+    <%= form.label :password, "Contraseña", class: "col-form-label-sm d-block d-sm-none" %>
+    <%= form.label :password, "Contraseña", class: "col-form-label-sm d-none d-sm-block text-left" %>
+    <%= form.password_field :password, autocomplete: "new-password",  placeholder: "*******", class: "form-control form-control-sm" %>	
+  </div>
+</fieldset>

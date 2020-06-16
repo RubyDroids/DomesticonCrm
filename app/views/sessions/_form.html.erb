@@ -1,22 +1,42 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+  <label class="d-none d-sm-block text-left">Ingresa tu email y contraseña:</label>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+  <div class="form-group form_email_field">
+    <div class="mx-auto">
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@email.com", class: "form-control form-control-sm" %>
+    </div>
+  </div>  
+  
+  <div class="form-group">
+    <div class="mx-auto">
+      <%= form.password_field :password, autocomplete: "current-password", placeholder: "*******", class: "form-control form-control-sm" %>
+    </div>
+  </div>        
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
 
-  <div class="other-links">
+  <div class="actions submit-field d-block d-sm-none text-center">
+    <%= form.submit "Ingresar", class: "btn btn-dark btn-sm" %>
+  </div>  
+
+  <div class="actions submit-field mt30 d-none d-sm-block text-left">
+    <%= form.submit "Ingresar", class: "btn btn-dark btn-sm float-left" %>
+    
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <%= link_to "Primera vez? Entra aquí", sign_up_path, class: "btn btn-secondary btn-sm float-right" %>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
+    <div class="clearfix"></div>
+    <p class="mt40 text-right">
+      <%= link_to "Recuperar clave", new_password_path, class: "btn btn-sm btn-light" %>
+    </p>    
+  </div>  
+
+
+  <div class="other-links mt20 d-block d-sm-none">
+    <% if Clearance.configuration.allow_sign_up? %>
+      <%= link_to "Primera vez? Entra aquí", sign_up_path, class: "btn btn-sm btn-secondary" %>
+    <% end %>
+    <p class="mt10">
+      <%= link_to "Recuperar clave", new_password_path, class: " btn btn-sm btn-light" %>
+    </p>
+  </div>  
 <% end %>
