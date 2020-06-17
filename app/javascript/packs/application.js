@@ -8,14 +8,11 @@ require("channels")
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
 
-// https://github.com/CodeSeven/toastr
-global.toastr = require("toastr")
 
 import "controllers"
 
-import "../javascripts/main"
-
-
+// https://github.com/CodeSeven/toastr
+global.toastr = require("toastr")
 toastr.options = {
   "closeButton": false,
   "debug": false,
@@ -33,3 +30,5 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
+
+import "../javascripts/main"

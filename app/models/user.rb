@@ -34,4 +34,8 @@ class User < ApplicationRecord
   def part_of_management?
     self.property_holder_type.include?(:vice, :president)
   end
+  
+  def full_name
+    [self.first_name, self.last_name].join(" ")
+  end
 end
