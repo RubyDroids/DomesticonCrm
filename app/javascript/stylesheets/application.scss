@@ -9,7 +9,7 @@
 }
 
 body {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 // custom styles
 .form_email_field {
@@ -54,9 +54,43 @@ body {
   position: absolute;
   top: 50px;
   right: 35px;
+  background-color: #fff;
+  z-index: 900;
   
   @include shadow_box;
 }
+
+.dropdown-menu {
+  font-size: 0.9rem;
+
+  @include shadow_box; 
+  
+  .dropdown-item {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.dropdown-toggle::after {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.alert {
+  display: flex;
+  flex-direction: row;
+}
+
+.alert .bi {
+  margin-right: 10px;
+}
+
+.alert span { margin-left: 10px; }
+.span-align-middle .alert .bi {
+  align-self: center;
+}
+
 
 /*Form Wizard*/
 .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
