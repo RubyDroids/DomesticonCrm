@@ -10,14 +10,14 @@ Rails.application.routes.draw do
     root to: "dashboards#main", as: :signed_in_root
   end  
 
-  # constraints Clearance::Constraints::SignedOut.new do
-  #   root to: "pages#index"
-  # end
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: "pages#index"
+  end
 
   #resources :users, only: [:index, :show, :edit, :update, :destroy]
   resources :users
 
-  root to: "pages#index"
+  #root to: "pages#index"
   
   # Admins section
   namespace :backoffice do

@@ -2,6 +2,15 @@
 // Font family link
 @import url('https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,500,700,900');
 
+@mixin shadow_box {
+  -webkit-box-shadow: 3px 7px 5px -1px rgba(0,0,0,0.24);
+  -moz-box-shadow: 3px 7px 5px -1px rgba(0,0,0,0.24);
+  box-shadow: 3px 7px 5px -1px rgba(0,0,0,0.24);
+}
+
+body {
+  font-size: 1rem;
+}
 // custom styles
 .form_email_field {
   margin-top: 40px;
@@ -9,6 +18,90 @@
 
 
 
+.navbar-custom {
+  background-color: #ffffff;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #36393D;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #36393D;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #36393D;
+}
+
+
+#search { 
+  width: 60%;
+  
+  .input-group {
+    width: 100%;
+    
+    .search_input {
+      border-radius: 20px;
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      text-align: center;  
+    }
+  
+    svg {
+      top: 8px;
+      right: 10px;
+      position: absolute;   
+      color: #36393D; 
+    }    
+  }
+}
+
+
+
+#user_menu {
+  width: 240px;
+  position: absolute;
+  top: 50px;
+  right: 35px;
+  background-color: #fff;
+  z-index: 900;
+  
+  @include shadow_box;
+}
+
+.dropdown-menu {
+  font-size: 0.9rem;
+
+  @include shadow_box; 
+  
+  .dropdown-item {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.dropdown-toggle::after {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.alert {
+  display: flex;
+  flex-direction: row;
+}
+
+.alert .bi {
+  margin-right: 10px;
+}
+
+.alert span { margin-left: 10px; }
+.span-align-middle .alert .bi {
+  align-self: center;
+}
 
 
 /*Form Wizard*/
